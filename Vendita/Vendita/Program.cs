@@ -35,7 +35,7 @@ namespace Vendita
            bool controlloValore = int.TryParse(valore, out valoreInt);
             while (controlloValore == false)
             {
-                Console.WriteLine("Errore: Inserisci un numero intero");
+                Console.WriteLine("\nErrore: Inserisci un numero intero\n");
                 valore = Console.ReadLine();
                 controlloValore = int.TryParse(valore, out valoreInt);
             }
@@ -50,26 +50,26 @@ namespace Vendita
             List<int> listaDaPagare = new List<int>();
 
             Console.WriteLine("Quali prodotti vuoi acquistare? " +
-                "(Inserisci il nome del prodotto che vuoi acquistare, inserisci exit quando non vuoi aggiungerne altri)");
+                "(Inserisci il nome del prodotto che vuoi acquistare, inserisci exit quando non vuoi aggiungerne altri)\n");
 
             while (ordineCliente != "exit")
             {
                 ordineCliente = Console.ReadLine();
                 if (inventario.ContainsKey(ordineCliente))
                 {
-                    Console.WriteLine($"Quanto/a {ordineCliente} vuoi acquistare?");
+                    Console.WriteLine($"\nQuanto/a {ordineCliente} vuoi acquistare?\n");
                     quantità = Console.ReadLine();
                     quantitàInt = ConvertiStringAInt(quantità);
                     listaDaPagare.Add(inventario[ordineCliente] * quantitàInt);
-                    Console.WriteLine("Articolo aggiunto correttamente, inseriscine un altro o inserisci exit se non vuoi aggiungerne altri");
+                    Console.WriteLine("\nArticolo aggiunto correttamente, inseriscine un altro o inserisci exit se non vuoi aggiungerne altri\n");
                 }
                 else if (ordineCliente != "exit")
                 {
-                    Console.WriteLine("Errore: articolo non esiste");
+                    Console.WriteLine("\nErrore: articolo non esiste\n");
                 }
                 else
                 {
-                    Console.WriteLine("Errore, qualcosa è andato storto");
+                    Console.WriteLine("\nOrdine chiuso correttamente\n");
                 }
             }
 
@@ -78,7 +78,7 @@ namespace Vendita
 
         static void MostraCostoERingrazia(int totale)
         {
-            Console.WriteLine($"Il totale da pagare è: {totale}$");
+            Console.WriteLine($"\nIl totale da pagare è: {totale}$\n");
             Console.WriteLine("Grazie e arrivederci");
             Console.ReadLine();
         }
