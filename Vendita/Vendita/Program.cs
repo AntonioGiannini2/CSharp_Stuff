@@ -21,7 +21,7 @@ namespace Vendita
         static void SalutaEMostraProdotti(Dictionary<string, int> inventario)
         {
             Console.WriteLine("Buongiorno!\n");
-            Console.WriteLine("I prodotti disponili sono:\n");
+            Console.WriteLine("I prodotti disponibili sono:\n");
             foreach (var prodotto in inventario)
             {
                 Console.WriteLine($"{prodotto.Key}: {prodotto.Value}$");
