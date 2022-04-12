@@ -42,7 +42,7 @@ namespace Vendita
             return valoreInt;
         }
 
-        static void GestisciOrdine(Dictionary<string, int> inventario, ref int totale)
+        static void RiempiCarrello(Dictionary<string, int> inventario, ref int totale)
         {
             string ordineCliente = null;
             string quantità;
@@ -90,7 +90,7 @@ namespace Vendita
 
             SalutaEMostraProdotti(inventario);
             
-            GestisciOrdine(inventario, ref totale);
+            RiempiCarrello(inventario, ref totale);
 
             MostraCostoERingrazia(totale);
         }
